@@ -65,7 +65,7 @@
           <Property Name="Changerooms" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="LGA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="coplayDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="SportandRecs" EntityType="Self.SportandRec" />
         </EntityContainer>
       </Schema>
@@ -73,7 +73,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="coplayDBModelStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="coplayDBModelStoreContainer" CdmEntityContainer="coplayDBEntities">
           <EntitySetMapping Name="SportandRecs">
             <EntityTypeMapping TypeName="coplayDBModel.SportandRec">
               <MappingFragment StoreEntitySet="SportandRec">

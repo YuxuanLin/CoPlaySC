@@ -1,0 +1,147 @@
+﻿@model IEnumerable<CoPlaySC.Models.DB.SportandRec>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.X)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Y)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Facility_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacilityName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StreetNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StreetName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StreetType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SuburbTown)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Postcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FaciltySportPlayedID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SportsPlayed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberFieldCourts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FieldSurfaceType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacilityAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacilityCondition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacilityUpgradeAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Changerooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LGA)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.X)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Y)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Facility_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacilityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StreetNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StreetName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StreetType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SuburbTown)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Postcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Latitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Longitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FaciltySportPlayedID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SportsPlayed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberFieldCourts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FieldSurfaceType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacilityAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacilityCondition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacilityUpgradeAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Changerooms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LGA)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OBJECTID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OBJECTID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OBJECTID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -176,27 +176,29 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SportandRecsController.cs" />
+    <Compile Include="Controllers\SportSpotsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\DB\SportandRec.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SportandRec.Context.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\DB\SportandRec.cs">
-      <DependentUpon>SportandRec.tt</DependentUpon>
+      <DependentUpon>SportandRecModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DB\SportandRec.Designer.cs">
+    <Compile Include="Models\DB\SportandRecModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SportandRec.edmx</DependentUpon>
+      <DependentUpon>SportandRecModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DB\SportandRec1.cs">
+    <Compile Include="Models\DB\SportandRecModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SportandRec.tt</DependentUpon>
+      <DependentUpon>SportandRecModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\SportandRecModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SportandRecModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -206,28 +208,29 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\sportspotssearch.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\DB\SportandRec.Context.tt">
+    <Content Include="Models\DB\SportandRecModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SportandRec.edmx</DependentUpon>
-      <LastGenOutput>SportandRec.Context.cs</LastGenOutput>
+      <DependentUpon>SportandRecModel.edmx</DependentUpon>
+      <LastGenOutput>SportandRecModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\DB\SportandRec.tt">
+    <Content Include="Models\DB\SportandRecModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SportandRec.edmx</DependentUpon>
-      <LastGenOutput>SportandRec1.cs</LastGenOutput>
+      <DependentUpon>SportandRecModel.edmx</DependentUpon>
+      <LastGenOutput>SportandRecModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\DB\SportandRec.edmx">
+    <EntityDeploy Include="Models\DB\SportandRecModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SportandRec.Designer.cs</LastGenOutput>
+      <LastGenOutput>SportandRecModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\DB\SportandRec.edmx.diagram">
-      <DependentUpon>SportandRec.edmx</DependentUpon>
+    <Content Include="Models\DB\SportandRecModel.edmx.diagram">
+      <DependentUpon>SportandRecModel.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\CoPlay - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\CoPlay - Web Deploy.pubxml" />
@@ -279,9 +282,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\SportandRecs\Create.cshtml" />
+    <Content Include="Views\SportandRecs\Delete.cshtml" />
+    <Content Include="Views\SportandRecs\Details.cshtml" />
+    <Content Include="Views\SportandRecs\Edit.cshtml" />
+    <Content Include="Views\SportandRecs\Index.cshtml" />
+    <Content Include="Views\SportSpots\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

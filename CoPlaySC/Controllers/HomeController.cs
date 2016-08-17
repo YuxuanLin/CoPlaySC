@@ -17,7 +17,7 @@ namespace CoPlaySC.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return View();//If not specified, return the page with same action name.
         }
 
         public ActionResult Contact()
