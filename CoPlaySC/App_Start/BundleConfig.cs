@@ -24,13 +24,14 @@ namespace CoPlaySC
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/Css/bootstrap.css",
-                      "~/Content/Css/site.css"));
+                      "~/Content/bootstrap.css",
+                      "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/search").Include(
-                        "~/Content/Css/sportspotssearch.css"));
+                        "~/Content/sportspotssearch.css"));
+
             bundles.Add(new ScriptBundle("~/bundles/aboutus").Include(
-                        "~/Content/Css/aboutus.css"));
+                        "~/Content/aboutus.css"));
         }
     }
 }
