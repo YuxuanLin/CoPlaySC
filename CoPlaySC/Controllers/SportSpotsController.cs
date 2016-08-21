@@ -23,10 +23,11 @@ namespace CoPlaySC.Controllers
             var results = from s in db.SportandRecs select s;
             if (!String.IsNullOrEmpty(SportType.Sports.ToString()))
             {
-                results = results.Where(s => s.SportsPlayed.ToUpper().Equals(SportType.Sports.ToString().ToUpper()));
+                string searchString = SportType.Sports.ToDisplayName().ToUpper();
+                results = results.Where(s => s.SportsPlayed.ToUpper().Equals(searchString));
             }
             
-            var preResult = new List<JSONrs>();
+            var preResult = new List<SportandRec>();
                 if (results.Count() == 0)
                 {
                     ViewBag.result = "No result found";
@@ -35,12 +36,10 @@ namespace CoPlaySC.Controllers
                 else
                 {
                     var count = 1;
-               
-                    //preResult.Add(new JSONrs(1, "Zaghouan", "-37.866851", "145.085201"));
-                    //preResult.Add(new JSONrs(2, "Hammamet", "-37.801945", "145.08444"));
+ 
                     foreach (SportandRec element in results)
                     {
-                        preResult.Add(new JSONrs(count++, element.FacilityName, element.Latitude, element.Longitude));
+                        preResult.Add(element);
                     }
                 }
             var jsonSerialiser = new JavaScriptSerializer();

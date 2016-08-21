@@ -202,6 +202,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SportandRecModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\EnumHelper.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\SportTypesEnum.cs" />

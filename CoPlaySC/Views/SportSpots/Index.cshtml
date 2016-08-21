@@ -27,10 +27,12 @@
     <div class="form-group">
         @Html.EnumDropDownListFor(model => model.Sports, 
                                   new { @class = "form-control" })  
-    </div>
-    <td>
+    
+        <br />
         <input id="Submit1" type="submit" value="Search" />
-    </td>
+    </div>
+
+
 }
 <!-- This is the div that will contain the Google Map -->
 <div id="map_canvas" style="height: 550px;"></div>
@@ -62,44 +64,46 @@
 
         // This makes the div with id "map_canvas" a google map
         var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+        map.addListener('click', function () {
+            map.setZoom(8);
+            map.setCenter(marker.getPosition());
+        });
 
         // a sample list of JSON encoded data of places to visit in Tunisia
         // you can either make up a JSON list server side, or call it from a controller using JSONResult
-        //var data = [
-        //          { "Id": 1, "PlaceName": "Zaghouan", "GeoLong": "-37.866851", "GeoLat": "145.085201" },
-        //          { "Id": 2, "PlaceName": "Hammamet ", "GeoLong": "-37.801945", "GeoLat": "145.08444" }
-        //        { "Id": 3, "PlaceName": "Sousse", "GeoLong": "35.8329809", "GeoLat": "10.63875" },
-        //        { "Id": 4, "PlaceName": "Sfax", "GeoLong": "34.745159", "GeoLat": "10.7613" }
-        //];
-        //console.log(data);
-
-        var data = JSON.parse('@Html.Raw(ViewBag.result)');
+        var data = JSON.parse('@Html.Raw(ViewBag.result)');//get data from controller
         console.log(data);
-
         // Using the JQuery "each" selector to iterate through the JSON list and drop marker pins
         $.each(data, function (i, item) {
             var marker = new google.maps.Marker({
-                'position': new google.maps.LatLng(item.GeoLat, item.GeoLong),//latitude, longitude
+                'position': new google.maps.LatLng(item.Latitude, item.Longitude),//latitude, longitude
                 'map': map,
-                'title': item.PlaceName
+                'title': item.FacilityName
             });
             console.log(item.GeoLong);
             // Make the marker-pin blue!
-            marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png')
+            //marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png')
 
             // put in some information about each json object - in this case, the opening hours.
             var infowindow = new google.maps.InfoWindow({
-                content: "<div class='infoDiv'><h2>" + item.PlaceName + "</div></div>"
+                content: "<div class='infoDiv'> <h4>Facility Name: " + item.FacilityName + "</h4><h4>Location:"
+            + " " + item.StreetNo + " " + item.StreetName + " " + item.SuburbTown + " " + item.Postcode + "</h4></div>"
             });
+
+
+
+
+
 
             // finally hook up an "OnClick" listener to the map so it pops up out info-window when the marker-pin is clicked!
             google.maps.event.addListener(marker, 'click', function () {
                 infowindow.open(map, marker);
             });
+
             marker.setMap(map);
 
         })
-        google.maps.event.addDomListener(window, 'load', Initialize);
+        google.maps.event.addListener(window, 'load', Initialize);
     }
 
 
