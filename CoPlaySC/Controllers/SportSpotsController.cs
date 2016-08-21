@@ -2,6 +2,7 @@
 using CoPlaySC.Models.DB;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -14,34 +15,43 @@ namespace CoPlaySC.Controllers
     {
         private coplayDBEntities db = new coplayDBEntities();
         // GET: SportandRecs/Details/5
-        public ActionResult Search(AllSportTypes SportType)
+        public ActionResult Search(ModelForSearchPage model)
         {
-            if (SportType == null)
+            if (model == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var results = from s in db.SportandRecs select s;
-            if (!String.IsNullOrEmpty(SportType.Sports.ToString()))
+            if (!String.IsNullOrEmpty(model.Sports.Sports.ToString()) && !String.IsNullOrEmpty(model.Suburbs.Suburbs.ToString()))
             {
-                string searchString = SportType.Sports.ToDisplayName().ToUpper();
-                results = results.Where(s => s.SportsPlayed.ToUpper().Equals(searchString));
-            }
-            
-            var preResult = new List<SportandRec>();
-                if (results.Count() == 0)
+                if (model.Suburbs.Suburbs.ToString().Equals("CURRENT"))
                 {
-                    ViewBag.result = "No result found";
+                    Debug.WriteLine( model.Suburbs.lat);
+                    ViewBag.lng = model.Suburbs.lng;
                     return View("Index");
                 }
                 else
                 {
-                    var count = 1;
- 
-                    foreach (SportandRec element in results)
-                    {
-                        preResult.Add(element);
-                    }
+                    string searchSportString = model.Sports.Sports.ToDisplayName().ToUpper();
+                    string searchSuburbString = model.Suburbs.Suburbs.ToDisplayName().ToUpper();
+
+                    results = results.Where(s => s.SportsPlayed.ToUpper().Equals(searchSportString) && s.SuburbTown.ToUpper().Equals(searchSuburbString));
                 }
+            }
+            var preResult = new List<SportandRec>();
+            if (results.Count() == 0)
+            {
+                ViewBag.result = "No result found";
+                return View("Index");
+            }
+            else
+            {
+ 
+                foreach (SportandRec element in results)
+                {
+                    preResult.Add(element);
+                }
+            }
             var jsonSerialiser = new JavaScriptSerializer();
             var json = jsonSerialiser.Serialize(preResult);
             ViewBag.result = json;
@@ -53,21 +63,6 @@ namespace CoPlaySC.Controllers
         public ActionResult Index()
         {
             return View();
-        }
-
-        public  partial class JSONrs
-        {
-            public JSONrs(int Id, string PlaceName, string GeoLat, string GeoLong)
-            {
-                this.Id = Id;
-                this.PlaceName = PlaceName;
-                this.GeoLong = GeoLong;
-                this.GeoLat = GeoLat;
-            }
-            public int Id { get; set; }
-            public string PlaceName { get; set; }
-            public string GeoLong { get; set; }
-            public string GeoLat { get; set; }
         }
     }
 }

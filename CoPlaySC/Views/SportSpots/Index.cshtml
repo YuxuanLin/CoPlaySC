@@ -1,4 +1,4 @@
-﻿@model CoPlaySC.Models.AllSportTypes
+﻿@model CoPlaySC.Models.ModelForSearchPage
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -25,15 +25,16 @@
 {
     <span>Choose a sport</span>
     <div class="form-group">
-        @Html.EnumDropDownListFor(model => model.Sports, 
+        @Html.EnumDropDownListFor(model => model.Sports.Sports, 
                                   new { @class = "form-control" })  
-    
+        <span>Choose a suburb</span>
+        @Html.EnumDropDownListFor(model => model.Suburbs.Suburbs, 
+                                  new { @class = "form-control" })
         <br />
-        <input id="Submit1" type="submit" value="Search" />
+        <input id="SubmitSuburb" type="submit" value="Search facilities by suburb" />      
     </div>
-
-
 }
+
 <!-- This is the div that will contain the Google Map -->
 <div id="map_canvas" style="height: 550px;"></div>
 <br />
@@ -44,7 +45,6 @@
 
     <!-- This code tells the browser to execute the "Initialize" method only when the complete document model has been loaded. -->
     $(document).ready(function () {
-        console.log("Begin map");
         Initialize();
     });
 
@@ -90,11 +90,6 @@
             + " " + item.StreetNo + " " + item.StreetName + " " + item.SuburbTown + " " + item.Postcode + "</h4></div>"
             });
 
-
-
-
-
-
             // finally hook up an "OnClick" listener to the map so it pops up out info-window when the marker-pin is clicked!
             google.maps.event.addListener(marker, 'click', function () {
                 infowindow.open(map, marker);
@@ -105,8 +100,6 @@
         })
         google.maps.event.addListener(window, 'load', Initialize);
     }
-
-
-        </script>
+    </script>
     </section>
 }
