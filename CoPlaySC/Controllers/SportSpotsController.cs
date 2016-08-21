@@ -22,13 +22,12 @@ namespace CoPlaySC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var results = from s in db.SportandRecs select s;
+            //Prepare searching string
             if (!String.IsNullOrEmpty(model.Sports.Sports.ToString()) && !String.IsNullOrEmpty(model.Suburbs.Suburbs.ToString()))
             {
                 if (model.Suburbs.Suburbs.ToString().Equals("CURRENT"))
                 {
-                    Debug.WriteLine( model.Suburbs.lat);
-                    ViewBag.lng = model.Suburbs.lng;
-                    return View("Index");
+                    
                 }
                 else
                 {
@@ -38,6 +37,7 @@ namespace CoPlaySC.Controllers
                     results = results.Where(s => s.SportsPlayed.ToUpper().Equals(searchSportString) && s.SuburbTown.ToUpper().Equals(searchSuburbString));
                 }
             }
+            //Prepare result
             var preResult = new List<SportandRec>();
             if (results.Count() == 0)
             {
@@ -46,7 +46,6 @@ namespace CoPlaySC.Controllers
             }
             else
             {
- 
                 foreach (SportandRec element in results)
                 {
                     preResult.Add(element);
