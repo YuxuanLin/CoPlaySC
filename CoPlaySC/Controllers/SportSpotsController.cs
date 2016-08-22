@@ -27,7 +27,8 @@ namespace CoPlaySC.Controllers
             {
                 if (model.Suburbs.Suburbs.ToString().Equals("CURRENT"))
                 {
-                    
+                    //For now
+                    return View("Index");
                 }
                 else
                 {
