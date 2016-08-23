@@ -20,6 +20,7 @@ namespace CoPlaySC.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        // This constructor will call 父类构造器IdentityDbContext.IdentityDbContext()
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
