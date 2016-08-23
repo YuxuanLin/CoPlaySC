@@ -5,6 +5,13 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 namespace CoPlaySC.Models
 {
+    public class Suburb
+    {
+        public SuburbEnum SuburbName { get; set; }
+        public double lat { get; set; }
+        public double lng { get; set; }
+             
+    }
     public enum SuburbEnum
     {
 
@@ -961,7 +968,7 @@ namespace CoPlaySC.Models
         KILLAWARRA,
         KILMANY,
         KILMORE,
-        
+
 
         [Display(Name = "KILMORE EAST")]
         KILMOREEAST,
@@ -969,7 +976,7 @@ namespace CoPlaySC.Models
         KILSYTH,
         KIMBOLTON,
         KINGLAKE,
-        
+
 
         [Display(Name = "KINGLAKE WEST")]
         KINGLAKEWEST,
@@ -980,7 +987,7 @@ namespace CoPlaySC.Models
         KNOWSLEY,
         KNOXFIELD,
         KONGWAK,
-        
+
 
         [Display(Name = "KOO WEE RUP")]
         KOOWEERUP,
@@ -991,7 +998,7 @@ namespace CoPlaySC.Models
         KOORLONG,
         KOOYONG,
         KORIOT,
-        
+
 
         [Display(Name = "KORONG VALE")]
         KORONGVALE,
@@ -999,7 +1006,7 @@ namespace CoPlaySC.Models
         KORUMBURRA,
         KORWEINGUBOORA,
         KOYUGA,
-        
+
 
         [Display(Name = "KY VALLEY")]
         KYVALLEY,
@@ -1429,25 +1436,25 @@ namespace CoPlaySC.Models
 
         [Display(Name = "NORTH BRIGHTON")]
         NORTHBRIGHTON,
-        
+
 
         [Display(Name = "NORTH ESSENDON")]
         NORTHESSENDON,
-        
+
 
         [Display(Name = "NORTH GEELONG")]
         NORTHGEELONG,
-        
+
 
         [Display(Name = "NORTH MELBOURNE")]
         NORTHMELBOURNE,
 
         NORTHCOTE,
-        
+
 
         [Display(Name = "NOTTING HILL")]
         NOTTINGHILL,
-        
+
 
         [Display(Name = "NOWA NOWA")]
         NOWANOWA,
@@ -1456,23 +1463,23 @@ namespace CoPlaySC.Models
         NUMURKAH,
         NUNAWADING,
         NYAH,
-        
+
 
         [Display(Name = "NYAH WEST")]
         NYAHWEST,
 
         NYORA,
-        
+
 
         [Display(Name = "OAK PARK")]
         OAKPARK,
 
         OAKLEIGH,
-        
+
 
         [Display(Name = "OAKLEIGH SOUTH")]
         OAKLEIGHSOUTH,
-        
+
 
         [Display(Name = "OCEAN GROVE")]
         OCEANGROVE,
@@ -1487,40 +1494,40 @@ namespace CoPlaySC.Models
         OUYEN,
         OXLEY,
         PAKENHAM,
-        
+
 
         [Display(Name = "PAKENHAM SOUTH")]
         PAKENHAMSOUTH,
-        
+
 
         [Display(Name = "PAKENHAM UPPER")]
         PAKENHAMUPPER,
 
         PANMURE,
-        
+
 
         [Display(Name = "PANTON HILL ")]
         PANTONHILL,
 
         PARAPARAP,
-        
+
 
         [Display(Name = "PARK ORCHARDS")]
         PARKORCHARDS,
 
         PARKDALE,
         PARKVILLE,
-        
+
 
         [Display(Name = "PASCOE VALE")]
         PASCOEVALE,
-        
+
 
         [Display(Name = "PASCOE VALE SOUTH")]
         PASCOEVALESOUTH,
 
         PATCHEWOLLOCK,
-        
+
 
         [Display(Name = "PATTERSON LAKES")]
         PATTERSONLAKES,
@@ -1531,39 +1538,39 @@ namespace CoPlaySC.Models
         PENNYROYAL,
         PENSHURST,
         PETERBOROUGH,
-        
+
 
         [Display(Name = "PHEASANT CREEK")]
         PHEASANTCREEK,
 
         PICOLA,
-        
+
 
         [Display(Name = "PIGEON PONDS")]
         PIGEONPONDS,
-        
+
 
         [Display(Name = "PINE LODGE")]
         PINELODGE,
-        
+
 
         [Display(Name = "PIRRON YALLOCK")]
         PIRRONYALLOCK,
 
         PLENTY,
-        
+
 
         [Display(Name = "POINT COOK")]
         POINTCOOK,
-        
+
 
         [Display(Name = "POINT LEO")]
         POINTLEO,
-        
+
 
         [Display(Name = "POINT LONSDALE")]
         POINTLONSDALE,
-        
+
 
         [Display(Name = "POINT WILSON")]
         POINTWILSON,
@@ -1571,19 +1578,19 @@ namespace CoPlaySC.Models
         POMONAL,
         POOWONG,
         POREPUNKAH,
-        
+
 
         [Display(Name = "PORT CAMPBELL")]
         PORTCAMPBELL,
-        
+
 
         [Display(Name = "PORT FAIRY")]
         PORTFAIRY,
-        
+
 
         [Display(Name = "PORT MELBOURNE")]
         PORTMELBOURNE,
-        
+
 
         [Display(Name = "PORT WELSHPOOL")]
         PORTWELSHPOOL,
@@ -1592,18 +1599,18 @@ namespace CoPlaySC.Models
         PORTLAND,
         PORTSEA,
         POWELLTOWN,
-        
+
 
         [Display(Name = "POWLETT PLAINS")]
         POWLETTPLAINS,
 
         PRAHRAN,
         PRESTON,
-        
+
 
         [Display(Name = "PRINCES HILL")]
         PRINCESHILL,
-        
+
 
         [Display(Name = "PRINCESS HILL")]
         PRINCESSHILL,
@@ -1611,14 +1618,14 @@ namespace CoPlaySC.Models
         PRINCETOWN,
         PURNIM,
         PYALONG,
-        
+
 
         [Display(Name = "PYRAMID HILLS")]
         PYRAMIDHILLS,
 
         QUAMBATOOK,
         QUANTONG,
-        
+
 
         [Display(Name = "QUARRY HILL")]
         QUARRYHILL,
@@ -1631,11 +1638,11 @@ namespace CoPlaySC.Models
         RAVENSWOOD,
         RAWSON,
         RAYWOOD,
-        
+
 
         [Display(Name = "RED CLIFFS")]
         REDCLIFFS,
-        
+
 
         [Display(Name = "RED HILL")]
         REDHILL,
@@ -1645,23 +1652,23 @@ namespace CoPlaySC.Models
         RESEARCH,
         RESERVOIR,
         RHYLL,
-        
+
 
         [Display(Name = "RICH AVON WEST")]
         RICHAVONWEST,
 
         RICHMOND,
-        
+
 
         [Display(Name = "RIDDELLS CREEK")]
         RIDDELLSCREEK,
 
         RINGWOOD,
-        
+
 
         [Display(Name = "RINGWOOD EAST")]
         RINGWOODEAST,
-        
+
 
         [Display(Name = "RINGWOOD NORTH")]
         RINGWOODNORTH,
@@ -1675,19 +1682,19 @@ namespace CoPlaySC.Models
         ROMSEY,
         ROSANNA,
         ROSEBUD,
-        
+
 
         [Display(Name = "ROSEBUD WEST")]
         ROSEBUDWEST,
 
         ROSEDALE,
-        
+
 
         [Display(Name = "ROSS CREEK")]
         ROSSCREEK,
 
         ROWVILLE,
-        
+
 
         [Display(Name = "ROXBURGH PARK")]
         ROXBURGHPARK,
@@ -1697,45 +1704,45 @@ namespace CoPlaySC.Models
         RUSHWORTH,
         RUTHERGLEN,
         RYE,
-        
+
 
         [Display(Name = "SAFETY BEACH")]
         SAFETYBEACH,
 
         SALE,
-        
+
 
         [Display(Name = "SAN REMO")]
         SANREMO,
 
         SANDFORD,
-        
+
 
         [Display(Name = "SANDHILL LAKE")]
         SANDHILLLAKE,
 
         SANDHURST,
         SANDRINGHAM,
-        
+
 
         [Display(Name = "SANDY CREEK")]
         SANDYCREEK,
-        
+
 
         [Display(Name = "SANDY POINT")]
         SANDYPOINT,
-        
+
 
         [Display(Name = "SANY POINT")]
         SANYPOINT,
 
         SARSFIELD,
         SCORESBY,
-        
+
 
         [Display(Name = "SCOTTS CREEK")]
         SCOTTSCREEK,
-        
+
 
         [Display(Name = "SEA LAKE")]
         SEALAKE,
@@ -1751,19 +1758,19 @@ namespace CoPlaySC.Models
         SERVICETON,
         SEVILLE,
         SEYMOUR,
-        
+
 
         [Display(Name = "SHADY CREEK")]
         SHADYCREEK,
 
         SHELFORD,
-        
+
 
         [Display(Name = "SHEPHERDS FLAT")]
         SHEPHERDSFLAT,
 
         SHEPPARTON,
-        
+
 
         [Display(Name = "SHEPPARTON EAST")]
         SHEPPARTONEAST,
@@ -1774,13 +1781,13 @@ namespace CoPlaySC.Models
         SKIPTON,
         SKYE,
         SMEATON,
-        
+
 
         [Display(Name = "SMITHS BEACH")]
         SMITHSBEACH,
 
         SMYTHESDALE,
-        
+
 
         [Display(Name = "SNAKE VALLEY")]
         SNAKEVALLEY,
@@ -1790,31 +1797,31 @@ namespace CoPlaySC.Models
         SOMERVILLE,
         SOMMERVILLE,
         SORRENTO,
-        
+
 
         [Display(Name = "SOUTH GEELONG")]
         SOUTHGEELONG,
-        
+
 
         [Display(Name = "SOUTH KENSINGTON")]
         SOUTHKENSINGTON,
-        
+
 
         [Display(Name = "SOUTH KINGSVILLE")]
         SOUTHKINGSVILLE,
-        
+
 
         [Display(Name = "SOUTH MELBOURNE")]
         SOUTHMELBOURNE,
-        
+
 
         [Display(Name = "SOUTH MORANG")]
         SOUTHMORANG,
-        
+
 
         [Display(Name = "SOUTH WARRANDYTE")]
         SOUTHWARRANDYTE,
-        
+
 
         [Display(Name = "SOUTH YARRA")]
         SOUTHYARRA,
@@ -1822,63 +1829,63 @@ namespace CoPlaySC.Models
         SOUTHBANK,
         SPEED,
         SPOTSWOOD,
-        
+
 
         [Display(Name = "SPRING GULLY")]
         SPRINGGULLY,
 
         SPRINGHURST,
         SPRINGVALE,
-        
+
 
         [Display(Name = "ST ALBANS")]
         STALBANS,
-        
+
 
         [Display(Name = "ST ANDREWS")]
         STANDREWS,
-        
+
 
         [Display(Name = "ST ANDREWS BEACH")]
         STANDREWSBEACH,
-        
+
 
         [Display(Name = "ST ARNAUD")]
         STARNAUD,
-        
+
 
         [Display(Name = "ST HELENA")]
         STHELENA,
-        
+
 
         [Display(Name = "ST JAMES")]
         STJAMES,
-        
+
 
         [Display(Name = "ST KILDA")]
         STKILDA,
-        
+
 
         [Display(Name = "ST KILDA EAST")]
         STKILDAEAST,
-        
+
 
         [Display(Name = "ST LEONARDS")]
         STLEONARDS,
-        
-        
+
+
 
         STANHOPE,
         STANLEY,
         STAWELL,
         STOCKDALE,
-        
+
 
         [Display(Name = "STONY CREEK")]
         STONYCREEK,
 
         STRATFORD,
-        
+
 
         [Display(Name = "STRATH CREEK")]
         STRATHCREEK,
@@ -1889,50 +1896,50 @@ namespace CoPlaySC.Models
         STRATHFIELDSAYE,
         STRATHMERTON,
         STRATHMORE,
-        
+
 
         [Display(Name = "STRATHMORE HEIGHTS")]
         STRATHMOREHEIGHTS,
 
         STREATHAM,
-        
+
 
         [Display(Name = "STUART MILL")]
         STUARTMILL,
 
         SUNBURY,
         SUNSHINE,
-        
+
 
         [Display(Name = "UNSHINE WEST")]
         SUNSHINEWEST,
-        
+
 
         [Display(Name = "SURREY HILLS")]
         SURREYHILLS,
-        
+
 
         [Display(Name = "SUTHERLANDS CREEK")]
         SUTHERLANDSCREEK,
-        
+
 
         [Display(Name = "SUTTON GRANGE")]
         SUTTONGRANGE,
-        
+
 
         [Display(Name = "SWAN HILL")]
         SWANHILL,
-        
+
 
         [Display(Name = "SWAN MARSH")]
         SWANMARSH,
-        
+
 
         [Display(Name = "SWAN REACH")]
         SWANREACH,
 
         SWANPOOL,
-        
+
 
         [Display(Name = "SWIFT CREEK")]
         SWIFTCREEK,
@@ -1953,7 +1960,7 @@ namespace CoPlaySC.Models
         TARRAWINGEE,
         TARRINGTON,
         TARRONE,
-        
+
 
         [Display(Name = "TARWIN LOWER")]
         TARWINLOWER,
@@ -1962,13 +1969,13 @@ namespace CoPlaySC.Models
         TATURA,
         TATYOON,
         TAWONGA,
-        
+
 
         [Display(Name = "TAYLORS LAKES")]
         TAYLORSLAKES,
 
         TEESDALE,
-        
+
 
         [Display(Name = "TELANGATUK EAST")]
         TELANGATUKEAST,
@@ -1977,13 +1984,13 @@ namespace CoPlaySC.Models
         TEMPY,
         TENNYSON,
         TERANG,
-        
+
 
         [Display(Name = "TERIP TERIP")]
         TERIPTERIP,
 
         THALLOO,
-        
+
 
         [Display(Name = "THE BASIN")]
         THEBASIN,
@@ -2008,7 +2015,7 @@ namespace CoPlaySC.Models
         TOORA,
         TOORADIN,
         TOORAK,
-        
+
 
         [Display(Name = "TOORLERN VALE")]
         TOORLERNVALE,
@@ -2018,7 +2025,7 @@ namespace CoPlaySC.Models
         TORRITA,
         TRAFALGAR,
         TRARALGON,
-        
+
 
         [Display(Name = "TRARALGON SOUTH")]
         TRARALGONSOUTH,
@@ -2032,7 +2039,7 @@ namespace CoPlaySC.Models
         TYERS,
         TYLDEN,
         TYNONG,
-        
+
 
         [Display(Name = "TYNTYNDER SOUTH")]
         TYNTYNDERSOUTH,
@@ -2041,31 +2048,31 @@ namespace CoPlaySC.Models
         ULTIMA,
         UNDERA,
         UNDERBOOL,
-        
+
 
         [Display(Name = "UPPER BEACONSFIELD")]
         UPPERBEACONSFIELD,
-        
+
 
         [Display(Name = "UPPER FERNTREE GULLY")]
         UPPERFERNTREEGULLY,
 
         UPWEY,
         VENTNOR,
-        
+
 
         [Display(Name = "VENUS BAY")]
         VENUSBAY,
 
         VERMONT,
-        
+
 
         [Display(Name = "VERMONT SOUTH")]
         VERMONTSOUTH,
 
         VIEWBANK,
         VINIFERA,
-        
+
 
         [Display(Name = "VIOLET TOWN")]
         VIOLETTOWN,
@@ -2079,22 +2086,22 @@ namespace CoPlaySC.Models
         WALLINGTON,
         WALPEUP,
         WALWA,
-        
+
 
         [Display(Name = "WANDANA HEIGHTS")]
         WANDANAHEIGHTS,
 
         WANDELLA,
         WANDILIGONG,
-        
+
 
         [Display(Name = "WANDIN EAST")]
         WANDINEAST,
-        
+
 
         [Display(Name = "WANDIN NORTH")]
         WANDINNORTH,
-        
+
 
         [Display(Name = "WANDO VALE")]
         WANDOVALE,
@@ -2105,7 +2112,7 @@ namespace CoPlaySC.Models
         WANGARTTA,
         WANGOOM,
         WANTIRNA,
-        
+
 
         [Display(Name = "WANTIRNA SOUTH")]
         WANTIRNASOUTH,
@@ -2115,11 +2122,11 @@ namespace CoPlaySC.Models
         WARNEET,
         WARRACKNABEAL,
         WARRAGUL,
-        
+
 
         [Display(Name = "WARRAGUL NORTH")]
         WARRAGULNORTH,
-        
+
 
         [Display(Name = "WARRAGUL SOUTH")]
         WARRAGULSOUTH,
@@ -2131,13 +2138,13 @@ namespace CoPlaySC.Models
         WARRNAMBOOL,
         WATCHEM,
         WATSONIA,
-        
+
 
         [Display(Name = "WATTLE GLEN")]
         WATTLEGLEN,
 
         WAUBRA,
-        
+
 
         [Display(Name = "WAURN PONDS")]
         WAURNPONDS,
@@ -2145,36 +2152,36 @@ namespace CoPlaySC.Models
         WEDDERBURN,
         WELSHPOOL,
         WENDOUREE,
-        
+
 
         [Display(Name = "WENDOUREE WEST")]
         WENDOUREEWEST,
 
         WERRIBEE,
         WESBURN,
-        
+
 
         [Display(Name = "WEST FOOTSCRAY")]
         WESTFOOTSCRAY,
-        
+
 
         [Display(Name = "WEST HEIDELBERG")]
         WESTHEIDELBERG,
-        
+
 
         [Display(Name = "WEST MELBOURNE")]
         WESTMELBOURNE,
-        
+
 
         [Display(Name = "WEST PRESTON")]
         WESTPRESTON,
 
         WESTMEADOWS,
-        
+
 
         [Display(Name = "WHEELERS HILL")]
         WHEELERSHILL,
-        
+
 
         [Display(Name = "WHITE HILLS")]
         WHITEHILLS,
@@ -2186,13 +2193,13 @@ namespace CoPlaySC.Models
         WICKLIFFE,
         WILBY,
         WILLIAMSTOWN,
-        
+
 
         [Display(Name = "WILLIAMSTOWN NORTH")]
         WILLIAMSTOWNNORTH,
 
         WILLLAURA,
-        
+
 
         [Display(Name = "WILLOW GROVE")]
         WILLOWGROVE,
@@ -2204,7 +2211,7 @@ namespace CoPlaySC.Models
         WODONGA,
         WOLLERT,
         WONDONGA,
-        
+
 
         [Display(Name = "WONGA PARK")]
         WONGAPARK,
@@ -2213,13 +2220,13 @@ namespace CoPlaySC.Models
         WONTHAGGIE,
         WOODEND,
         WOODFORD,
-        
+
 
         [Display(Name = "WOODS POINT")]
         WOODSPOINT,
 
         WOODSIDE,
-        
+
 
         [Display(Name = "WOODSIDE BEACH")]
         WOODSIDEBEACH,
@@ -2228,14 +2235,14 @@ namespace CoPlaySC.Models
         WOOLAMAI,
         WOOLSTHORPE,
         WOOMELANG,
-        
+
 
         [Display(Name = "WOORI YALLOCK")]
         WOORIYALLOCK,
 
         WOORINEN,
         WOORNDOO,
-        
+
 
         [Display(Name = "WOOTONG VALE")]
         WOOTONGVALE,
@@ -2243,17 +2250,17 @@ namespace CoPlaySC.Models
         WORAGEE,
         WUNGHNU,
         WURRUK,
-        
+
 
         [Display(Name = "WY YUNG")]
         WYYUNG,
 
         WYCHEPROOF,
-        
+
 
         [Display(Name = "WYE RIVER")]
         WYERIVER,
-        
+
 
         [Display(Name = "WYNDHAM VALE")]
         WYNDHAMVALE,
@@ -2263,13 +2270,13 @@ namespace CoPlaySC.Models
         YACKANDANDAH,
         YALLAMBIE,
         YALLOURN,
-        
+
 
         [Display(Name = "YALLOURN NORTH")]
         YALLOURNNORTH,
 
         YAMBUK,
-        
+
 
         [Display(Name = "YAN YEAN")]
         YANYEAN,
@@ -2279,11 +2286,11 @@ namespace CoPlaySC.Models
         YANNATHAN,
         YAPEEN,
         YARCK,
-        
+
 
         [Display(Name = "YARRA GLEN")]
         YARRAGLEN,
-        
+
 
         [Display(Name = "YARRA JUNCTION")]
         YARRAJUNCTION,
@@ -2301,7 +2308,7 @@ namespace CoPlaySC.Models
         YEO,
         YERING,
         YINNAR,
-        
+
 
         [Display(Name = "YINNAR SOUTH")]
         YINNARSOUTH,

@@ -5,8 +5,9 @@ using System.Web;
 
 namespace CoPlaySC.Models
 {
-    public class AllSportTypes
+    public class SportSearchViewModels
     {
-        public SportTypesEnum Sports { get; set; }
+        public Suburb Suburbs { get; set; }
+        public SportType Sports { get; set; }
     }
 }

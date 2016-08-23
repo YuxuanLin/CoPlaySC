@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-
+using System.ComponentModel.DataAnnotations;
 namespace CoPlaySC.Models
 {
+    public class SportType
+    {
+        public SportTypesEnum SportsName { get; set; }
+    }
     public enum SportTypesEnum
     {
-                Aerobics,
+        Aerobics,
 
         [Display(Name = "AFL (Indoor)")]
         AFLIndoor,
@@ -101,7 +104,7 @@ namespace CoPlaySC.Models
         [Display(Name = "Motor Cycling")]
         MotorCycling,
 
-        [Display(Name = "Motor Sports")]
+        [Display(Name = "Motor SportsName")]
         MotorSports,
 
         Netball,
@@ -124,7 +127,7 @@ namespace CoPlaySC.Models
 
         Rodeo,
 
-        [Display(Name = "Roller Sports - Other")]
+        [Display(Name = "Roller SportsName - Other")]
         RollerSportsOther,
 
         Rowing,
@@ -137,7 +140,7 @@ namespace CoPlaySC.Models
 
         Sailing,
 
-        [Display(Name = "Shooting Sports")]
+        [Display(Name = "Shooting SportsName")]
         ShootingSports,
 
         Skating,
@@ -146,7 +149,7 @@ namespace CoPlaySC.Models
         SnookerBilliardsPool,
 
         Soccer,
-        
+
         [Display(Name = "Soccer (Indoor Soccer / Futsal)")]
         SoccerIndoorSoccerFutsal,
 
@@ -192,8 +195,8 @@ namespace CoPlaySC.Models
         [Display(Name = "Water Skiing")]
         WaterSkiing,
 
-        [Display(Name = "Wheelchair Sports")]
+        [Display(Name = "Wheelchair SportsName")]
         WheelchairSports
-       
+
     }
 }

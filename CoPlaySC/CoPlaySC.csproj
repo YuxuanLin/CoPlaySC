@@ -177,38 +177,47 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\SportandRecsController.cs" />
     <Compile Include="Controllers\SportSpotsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AllSportTypes.cs" />
-    <Compile Include="Models\AllSuburbs.cs" />
-    <Compile Include="Models\DB\SportandRec.cs">
-      <DependentUpon>SportandRecModel.tt</DependentUpon>
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>CoPlayModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DB\SportandRecModel.Context.cs">
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>CoPlayModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaim.cs">
+      <DependentUpon>CoPlayModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>CoPlayModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CoPlayModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SportandRecModel.Context.tt</DependentUpon>
+      <DependentUpon>CoPlayModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DB\SportandRecModel.cs">
+    <Compile Include="Models\CoPlayModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SportandRecModel.tt</DependentUpon>
+      <DependentUpon>CoPlayModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DB\SportandRecModel.Designer.cs">
+    <Compile Include="Models\CoPlayModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SportandRecModel.edmx</DependentUpon>
+      <DependentUpon>CoPlayModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\SportandRec.cs">
+      <DependentUpon>CoPlayModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SportType.cs" />
+    <Compile Include="Models\Suburb.cs" />
     <Compile Include="Models\EnumHelper.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\ModelForSearchPage.cs" />
-    <Compile Include="Models\SportTypesEnum.cs" />
-    <Compile Include="Models\SuburbEnum.cs" />
+    <Compile Include="Models\SportSearchViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -227,23 +236,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\DB\SportandRecModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SportandRecModel.edmx</DependentUpon>
-      <LastGenOutput>SportandRecModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\DB\SportandRecModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SportandRecModel.edmx</DependentUpon>
-      <LastGenOutput>SportandRecModel.cs</LastGenOutput>
-    </Content>
-    <EntityDeploy Include="Models\DB\SportandRecModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SportandRecModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DB\SportandRecModel.edmx.diagram">
-      <DependentUpon>SportandRecModel.edmx</DependentUpon>
-    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -252,9 +244,26 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <EntityDeploy Include="Models\CoPlayModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CoPlayModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CoPlayModel.edmx.diagram">
+      <DependentUpon>CoPlayModel.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\CoPlay - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\CoPlay - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="Models\CoPlayModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CoPlayModel.edmx</DependentUpon>
+      <LastGenOutput>CoPlayModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CoPlayModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CoPlayModel.edmx</DependentUpon>
+      <LastGenOutput>CoPlayModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
@@ -308,11 +317,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\SportandRecs\Create.cshtml" />
-    <Content Include="Views\SportandRecs\Delete.cshtml" />
-    <Content Include="Views\SportandRecs\Details.cshtml" />
-    <Content Include="Views\SportandRecs\Edit.cshtml" />
-    <Content Include="Views\SportandRecs\Index.cshtml" />
     <Content Include="Views\SportSpots\Index.cshtml" />
     <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.0.min.map" />

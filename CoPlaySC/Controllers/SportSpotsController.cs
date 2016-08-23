@@ -1,5 +1,4 @@
 ﻿using CoPlaySC.Models;
-using CoPlaySC.Models.DB;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,7 +14,7 @@ namespace CoPlaySC.Controllers
     {
         private coplayDBEntities db = new coplayDBEntities();
         // GET: SportandRecs/Details/5
-        public ActionResult Search(ModelForSearchPage model)
+        public ActionResult Search(SportSearchViewModels model)
         {
             if (model == null)
             {
@@ -23,17 +22,17 @@ namespace CoPlaySC.Controllers
             }
             var results = from s in db.SportandRecs select s;
             //Prepare searching string
-            if (!String.IsNullOrEmpty(model.Sports.Sports.ToString()) && !String.IsNullOrEmpty(model.Suburbs.Suburbs.ToString()))
+            if (!String.IsNullOrEmpty(model.Sports.SportsName.ToString()) && !String.IsNullOrEmpty(model.Suburbs.SuburbName.ToString()))
             {
-                if (model.Suburbs.Suburbs.ToString().Equals("CURRENT"))
+                if (model.Suburbs.SuburbName.ToString().Equals("CURRENT"))
                 {
                     //For now
                     return View("Index");
                 }
                 else
                 {
-                    string searchSportString = model.Sports.Sports.ToDisplayName().ToUpper();
-                    string searchSuburbString = model.Suburbs.Suburbs.ToDisplayName().ToUpper();
+                    string searchSportString = model.Sports.SportsName.ToDisplayName().ToUpper();
+                    string searchSuburbString = model.Suburbs.SuburbName.ToDisplayName().ToUpper();
 
                     results = results.Where(s => s.SportsPlayed.ToUpper().Equals(searchSportString) && s.SuburbTown.ToUpper().Equals(searchSuburbString));
                 }

@@ -1,4 +1,4 @@
-﻿@model CoPlaySC.Models.ModelForSearchPage
+﻿@model CoPlaySC.Models.SportSearchViewModels
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -25,10 +25,10 @@
 {
     <span>Choose a sport</span>
     <div class="form-group">
-        @Html.EnumDropDownListFor(model => model.Sports.Sports, 
+        @Html.EnumDropDownListFor(model => model.Sports.SportsName, 
                                   new { @class = "form-control" })  
         <span>Choose a suburb</span>
-        @Html.EnumDropDownListFor(model => model.Suburbs.Suburbs, 
+        @Html.EnumDropDownListFor(model => model.Suburbs.SuburbName, 
                                   new { @class = "form-control" })
         <br />
         <input id="SubmitSuburb" type="submit" value="Search facilities by suburb" />      

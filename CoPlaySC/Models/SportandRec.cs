@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CoPlaySC.Models.DB
+namespace CoPlaySC.Models
 {
     using System;
     using System.Collections.Generic;
