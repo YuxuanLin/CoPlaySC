@@ -41,7 +41,7 @@ namespace CoPlaySC.Controllers
             var preResult = new List<SportandRec>();
             if (results.Count() == 0)
             {
-                ViewBag.prompt = "No result found";
+                ViewBag.result = "No result found";
                 return View("Index");
             }
             else
@@ -53,7 +53,6 @@ namespace CoPlaySC.Controllers
             }
             var jsonSerialiser = new JavaScriptSerializer();
             var json = jsonSerialiser.Serialize(preResult);
-            ViewBag.prompt = "";
             ViewBag.result = json;
             return View("Index");
         }
