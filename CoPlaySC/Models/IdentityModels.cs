@@ -22,7 +22,7 @@ namespace CoPlaySC.Models
     {
         // This constructor will call IdentityDbContext.IdentityDbContext()
         public ApplicationDbContext()
-            : base("coplayDBEntities", throwIfV1Schema: false)
+            : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
